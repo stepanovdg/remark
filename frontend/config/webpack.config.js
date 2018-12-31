@@ -91,6 +91,7 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       Component: ['preact', 'Component'],
+      b: 'bem-react-helper',
     }),
     new Html({
       template: path('src/demo/index.ejs'),
