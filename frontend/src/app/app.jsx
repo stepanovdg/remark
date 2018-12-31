@@ -5,6 +5,6 @@ import Root from 'app/components/root';
 
 reactHotLoader.preact(preact);
 
-const App = hot(module)(Root);
+const App = hot(module)(() => <div id="remark42-root-node"><Root/></div>);
 
 export default App;

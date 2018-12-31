@@ -66,6 +66,7 @@ module.exports = {
                   url: 'inline',
                   maxSize: 5,
                 }),
+                require('postcss-wrap')({ selector: `#remark42-root-node` }),
               ],
             },
           },

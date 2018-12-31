@@ -1,7 +1,7 @@
 export default class Root extends Component {
   render(props, state) {
     return (
-      <div className="root">
+      <div className={b('root', props)}>
         remark42
       </div>
     );
