@@ -35,6 +35,7 @@ module.exports = {
   },
   resolveLoader: {
     alias: {
+      'scss-imports-loader': path('config/loaders/scss-imports-loader'),
       'scss-vars-loader': path('config/loaders/scss-vars-loader'),
     },
   },
@@ -79,6 +80,12 @@ module.exports = {
               sourceMap: true,
               includePaths: [path('src')],
             },
+          },
+          {
+            loader: 'scss-imports-loader',
+            options: {
+              paths: require('./scss-imports'),
+            }
           },
           'scss-vars-loader',
         ],
