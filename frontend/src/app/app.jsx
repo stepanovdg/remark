@@ -1,10 +1,10 @@
-import { render } from 'preact';
+import reactHotLoader, { hot } from 'react-hot-loader';
+import preact from 'preact';
 
-import App from './app.states';
+import Root from 'app/components/root';
 
-export default ({ root }) => {
-  render(
-    <App/>,
-    root
-  );
-};
+reactHotLoader.preact(preact);
+
+const App = hot(module)(Root);
+
+export default App;

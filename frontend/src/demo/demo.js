@@ -1,5 +1,8 @@
-import remark from '../app/app';
+import { render } from 'preact';
 
-remark({
-  root: document.getElementById('remark42'),
-});
+import App from '../app/app';
+
+render(
+  <App/>,
+  document.getElementById('remark42')
+);
