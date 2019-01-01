@@ -21,3 +21,9 @@ export default class Root extends Component {
     );
   }
 }
+
+Root.propTypes = {
+  isLoading: PropTypes.bool,
+  decreaseLoadingCounter: PropTypes.func,
+  increaseLoadingCounter: PropTypes.func,
+};
