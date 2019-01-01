@@ -99,6 +99,7 @@ module.exports = {
     }),
     new webpack.ProvidePlugin({
       Component: ['preact', 'Component'],
+      PropTypes: 'prop-types',
       b: 'bem-react-helper',
     }),
     new Html({
