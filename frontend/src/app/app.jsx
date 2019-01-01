@@ -8,10 +8,10 @@ import store from 'app/app.store';
 
 reactHotLoader.preact(preact);
 
-const App = () => (
+const App = props => (
   <div id="remark42-root-node">
     <Provider store={store}>
-      <Root/>
+      <Root theme={props.theme}/>
     </Provider>
   </div>
 );
