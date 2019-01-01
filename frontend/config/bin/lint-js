@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -o errexit
+
+# --no-eslintrc нужен потому, что иначе eslint начнёт искать ещё и конфиги в package.json и в корне проекта
+eslint --no-eslintrc --cache -c .eslintrc.js --ext .js,.jsx src config

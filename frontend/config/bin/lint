@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+WORKING_DIRECTORY=`pwd`
+isError=0
+
+runScript() {
+  for i in "$@"; do
+    echo "Start "$i" lint:"
+    $WORKING_DIRECTORY/config/bin/lint-$i || isError=$?
+    echo "Done "$i" lint."
+  done
+}
+
+runScript "js"
+
+exit $isError
