@@ -1,14 +1,31 @@
+import API from 'app/services/api';
+
 import { THEMES, DEFAULT_THEME } from 'app/constants/main';
 
 import Preloader from 'app/components/preloader';
 
 export default class Root extends Component {
-  componentWillMount() {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      inited: false,
+    };
+  }
+
+  async componentWillMount() {
     this.updateMainParams();
 
     this.props.increaseLoadingCounter();
-    // emulation of loading
-    setTimeout(() => this.props.decreaseLoadingCounter(), 2000);
+
+    try {
+      this.props.setMainParams({ config: await API.getConfig() });
+    } catch (e) {
+      console.error(e);
+    }
+
+    this.props.decreaseLoadingCounter();
+    this.setState({ inited: true });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -36,16 +53,25 @@ export default class Root extends Component {
     }
   }
 
-  render(props) {
-    const { isLoading, currentTheme } = props;
+  render() {
+    const { isLoading, currentTheme, config = {} } = this.props;
+    const { inited } = this.state;
 
     return (
-      <div className={b('root', props, { loading: isLoading, theme: currentTheme })}>
-        <div className="root__body">
-          remark42
-        </div>
+      <div className={b('root', this.props, { theme: currentTheme })}>
+        {
+          !isLoading && inited && (
+            <div className="root__body">
+              {
+                config.auth_providers.join(', ')
+              }
+            </div>
+          )
+        }
 
-        <Preloader mix="root__preloader"/>
+        {
+          isLoading && <Preloader mix="root__preloader"/>
+        }
       </div>
     );
   }
@@ -60,6 +86,8 @@ Root.propTypes = {
   baseUrl: PropTypes.string,
   apiBase: PropTypes.string,
   theme: PropTypes.string,
+
+  config: PropTypes.object,
 
   currentTheme: PropTypes.string,
   isLoading: PropTypes.bool,

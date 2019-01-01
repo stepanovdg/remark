@@ -7,6 +7,7 @@ import Root from './root';
 const mapStateToProps = state => ({
   isLoading: state.loadingCounter > 0,
   currentTheme: state.theme,
+  config: state.config,
 });
 
 const mapActionsToProps = {
@@ -20,5 +21,3 @@ export default connect(mapStateToProps, mapActionsToProps)(Root);
 require('./root.scss');
 
 require('./__preloader/root__preloader.scss');
-
-require('./_loading/root_loading.scss');
