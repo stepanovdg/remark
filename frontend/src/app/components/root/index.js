@@ -6,6 +6,7 @@ import Root from './root';
 
 const mapStateToProps = state => ({
   isLoading: state.loadingCounter > 0,
+  currentTheme: state.theme,
 });
 
 const mapActionsToProps = {
