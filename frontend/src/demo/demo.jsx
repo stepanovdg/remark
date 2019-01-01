@@ -9,7 +9,7 @@ const theme = getQueryParams().theme || 'light';
 window.DEMO = {
   theme,
   render: () => {
-    document.querySelector('body').className = theme;
+    document.querySelector('body').className = window.DEMO.theme;
     document.getElementById('remark42').innerHTML = '';
 
     render(
