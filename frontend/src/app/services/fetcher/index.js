@@ -1,3 +1,1 @@
-import fetcher from './fetcher';
-
-module.exports = fetcher;
+export { default } from './fetcher';
