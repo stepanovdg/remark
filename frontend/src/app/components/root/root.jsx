@@ -19,7 +19,7 @@ export default class Root extends Component {
 
   componentWillReceiveProps(nextProps) {
     const { theme } = this.props;
-    const { nextTheme } = nextProps;
+    const { theme: nextTheme } = nextProps;
 
     if (theme && nextTheme && theme !== nextTheme) {
       if (THEMES.includes(nextTheme)) {
@@ -28,7 +28,7 @@ export default class Root extends Component {
     }
   }
 
-  render(props, state) {
+  render(props) {
     const { isLoading, currentTheme } = props;
 
     return (
@@ -48,8 +48,11 @@ Root.defaultProps = {
 };
 
 Root.propTypes = {
+  theme: PropTypes.string,
+
   currentTheme: PropTypes.string,
   isLoading: PropTypes.bool,
+
   changeTheme: PropTypes.func,
   decreaseLoadingCounter: PropTypes.func,
   increaseLoadingCounter: PropTypes.func,
