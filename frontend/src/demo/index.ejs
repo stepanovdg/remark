@@ -11,20 +11,45 @@
       margin: 0;
     }
 
+    body.light {
+      background: #fff;
+      color: #000;
+    }
+
+    body.dark {
+      background: #000;
+      color: #fff;
+    }
+
     .container {
       max-width: 800px;
       margin: 40px;
     }
   </style>
 </head>
-<body>
+<body class="light">
   <div class="container">
     <h1>Demo page</h1>
+
     <p>To install widgets on your website, follow the <a href="https://github.com/umputun/remark#setup-on-your-website">instructions</a>.</p>
+
+    <p>
+      <button onclick="toggleTheme()">Toggle theme</button>
+    </p>
+
     <div id="remark42"></div>
   </div>
 
   <script src="demo.js"></script>
+
+  <script>
+    function toggleTheme() {
+      const theme = window.DEMO.theme === 'light' ? 'dark' : 'light'
+      window.DEMO.theme = theme;
+      document.querySelector('body').className = theme;
+      window.DEMO.render();
+    }
+  </script>
 
   <noscript>
     Please enable JavaScript to view the comments powered by Remark42.
