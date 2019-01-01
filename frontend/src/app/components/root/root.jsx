@@ -8,7 +8,7 @@ export default class Root extends Component {
 
     if (theme) {
       if (THEMES.includes(theme)) {
-        this.props.changeTheme(theme);
+        this.props.setMainParams({ theme });
       }
     }
 
@@ -23,7 +23,7 @@ export default class Root extends Component {
 
     if (theme && nextTheme && theme !== nextTheme) {
       if (THEMES.includes(nextTheme)) {
-        this.props.changeTheme(nextTheme);
+        this.props.setMainParams({ theme: nextTheme });
       }
     }
   }
@@ -53,7 +53,7 @@ Root.propTypes = {
   currentTheme: PropTypes.string,
   isLoading: PropTypes.bool,
 
-  changeTheme: PropTypes.func,
+  setMainParams: PropTypes.func,
   decreaseLoadingCounter: PropTypes.func,
   increaseLoadingCounter: PropTypes.func,
 };

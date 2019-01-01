@@ -1,6 +1,6 @@
 import { connect } from 'redux-zero/preact';
 
-import { changeTheme, increaseLoadingCounter, decreaseLoadingCounter } from 'app/store/actions';
+import { increaseLoadingCounter, decreaseLoadingCounter, setMainParams } from 'app/store/actions';
 
 import Root from './root';
 
@@ -12,7 +12,7 @@ const mapStateToProps = state => ({
 const mapActionsToProps = {
   increaseLoadingCounter,
   decreaseLoadingCounter,
-  changeTheme,
+  setMainParams,
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(Root);
