@@ -4,13 +4,7 @@ import Preloader from 'app/components/preloader';
 
 export default class Root extends Component {
   componentWillMount() {
-    const { theme } = this.props;
-
-    if (theme) {
-      if (THEMES.includes(theme)) {
-        this.props.setMainParams({ theme });
-      }
-    }
+    this.updateMainParams();
 
     this.props.increaseLoadingCounter();
     // emulation of loading
@@ -18,13 +12,27 @@ export default class Root extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const { theme } = this.props;
-    const { theme: nextTheme } = nextProps;
+    this.updateMainParams(nextProps);
+  }
 
-    if (theme && nextTheme && theme !== nextTheme) {
-      if (THEMES.includes(nextTheme)) {
-        this.props.setMainParams({ theme: nextTheme });
-      }
+  updateMainParams(nextProps) {
+    const { siteId, baseUrl, apiBase, theme } = this.props;
+
+    if (!nextProps) {
+      this.props.setMainParams({
+        siteId,
+        baseUrl,
+        apiBase,
+        ...(theme && THEMES.includes(theme) ? { theme } : {}),
+      });
+    } else {
+      const { theme: nextTheme } = nextProps;
+      this.props.setMainParams({
+        siteId,
+        baseUrl,
+        apiBase,
+        ...(theme && nextTheme && theme !== nextTheme && THEMES.includes(theme) ? { theme: nextTheme } : {}),
+      });
     }
   }
 
@@ -48,6 +56,9 @@ Root.defaultProps = {
 };
 
 Root.propTypes = {
+  siteId: PropTypes.string,
+  baseUrl: PropTypes.string,
+  apiBase: PropTypes.string,
   theme: PropTypes.string,
 
   currentTheme: PropTypes.string,
