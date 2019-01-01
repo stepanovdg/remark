@@ -9,7 +9,7 @@ window.DEMO = {
 
     render(
       <App theme={window.DEMO.theme}/>,
-      document.getElementById('remark42')
+      document.getElementById('remark42'),
     );
   },
 };

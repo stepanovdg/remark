@@ -9,11 +9,11 @@ const withTheme = PlainComponent => {
     render(props) {
       const { theme, mods = {}, ...rest } = props;
 
-      return <PlainComponent {...rest} mods={{ theme, ...mods }} />;
+      return <PlainComponent {...rest} mods={{ theme, ...mods }}/>;
     }
   }
 
-  return connect(mapStateToProps)(WrappedComponent)
+  return connect(mapStateToProps)(WrappedComponent);
 };
 
 export default withTheme;

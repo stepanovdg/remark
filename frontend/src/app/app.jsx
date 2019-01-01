@@ -16,4 +16,8 @@ const App = props => (
   </div>
 );
 
+App.propTypes = {
+  theme: PropTypes.string,
+};
+
 export default hot(module)(App);
