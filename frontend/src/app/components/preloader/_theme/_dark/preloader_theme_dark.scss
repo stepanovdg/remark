@@ -1,0 +1,5 @@
+.#{$b}_theme_dark {
+  .#{$b}__bounce {
+    background-color: map-get($darkTheme, 'accent');
+  }
+}
