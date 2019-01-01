@@ -7,6 +7,9 @@ export default {
   siteId: null,
   theme: DEFAULT_THEME,
 
+  // loaded data
+  config: {},
+
   // local state
   loadingCounter: 0,
 };
