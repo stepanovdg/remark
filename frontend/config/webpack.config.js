@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+
 const Define = webpack.DefinePlugin;
 const Clean = require('clean-webpack-plugin');
 const Html = require('html-webpack-plugin');
@@ -20,7 +21,7 @@ module.exports = {
   },
   output: {
     path: publicFolder,
-    filename: `[name].js`,
+    filename: '[name].js',
   },
   resolve: {
     extensions: ['.jsx', '.js'],
@@ -49,7 +50,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-            'style-loader',
+          'style-loader',
           {
             loader: 'css-loader',
             options: {
@@ -67,7 +68,7 @@ module.exports = {
                   url: 'inline',
                   maxSize: 5,
                 }),
-                require('postcss-wrap')({ selector: `#remark42-root-node` }),
+                require('postcss-wrap')({ selector: '#remark42-root-node' }),
               ],
             },
           },
@@ -85,7 +86,7 @@ module.exports = {
             loader: 'scss-imports-loader',
             options: {
               paths: require('./scss-imports'),
-            }
+            },
           },
           'scss-vars-loader',
         ],
