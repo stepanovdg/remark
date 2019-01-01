@@ -4,9 +4,12 @@ import MockAdapter from 'axios-mock-adapter';
 import logger from 'app/helpers/logger';
 import getTimeString from 'app/helpers/get-time-string';
 
+import getConfig from 'mocks/endpoints/getConfig';
 import settings from './app.settings';
 
+
 const methods = [
+  { mock: getConfig, path: '*/config?*' },
 ];
 
 if (settings.isMocksEnabled) {
