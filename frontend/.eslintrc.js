@@ -10,7 +10,4 @@ module.exports = {
       },
     },
   },
-  rules: {
-    'react/no-unused-prop-types': 'off', // eslint-plugin-react cant check preact's props properly
-  }
 };
