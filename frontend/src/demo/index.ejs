@@ -27,7 +27,7 @@
     }
   </style>
 </head>
-<body class="light">
+<body>
   <div class="container">
     <h1>Demo page</h1>
 
@@ -46,7 +46,6 @@
     function toggleTheme() {
       const theme = window.DEMO.theme === 'light' ? 'dark' : 'light'
       window.DEMO.theme = theme;
-      document.querySelector('body').className = theme;
       window.DEMO.render();
     }
   </script>
