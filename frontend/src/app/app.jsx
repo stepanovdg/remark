@@ -13,7 +13,7 @@ reactHotLoader.preact(preact);
 const App = props => (
   <div id="remark42-root-node">
     <Provider store={store}>
-      <Root theme={props.theme}/>
+      <Root theme={props.theme} baseUrl="/" apiBase="/api/v1" siteId="remark"/>
     </Provider>
   </div>
 );
