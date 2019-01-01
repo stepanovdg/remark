@@ -11,6 +11,6 @@ runScript() {
   done
 }
 
-runScript "js"
+runScript "scss" "js"
 
 exit $isError

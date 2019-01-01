@@ -7,6 +7,7 @@
     "dev": "bash ./config/bin/dev",
     "lint": "bash ./config/bin/lint",
     "lint-js": "bash ./config/bin/lint-js",
+    "lint-scss": "bash ./config/bin/lint-scss",
     "prebuild": "npm run lint"
   },
   "devDependencies": {
@@ -16,6 +17,7 @@
     "@babel/preset-env": "7.1.0",
     "@babel/preset-react": "7.0.0",
     "@igoradamenko/eslint-config": "^0.1.0",
+    "@igoradamenko/stylelint-config": "^0.1.0",
     "autoprefixer": "9.4.3",
     "babel-loader": "8.0.4",
     "babel-plugin-jsx-pragmatic": "1.0.2",
@@ -37,6 +39,7 @@
     "sass": "1.15.2",
     "sass-loader": "7.1.0",
     "style-loader": "0.23.1",
+    "stylelint": "8.0.0",
     "webpack": "3.12.0",
     "webpack-dev-server": "2.7.1"
   },
@@ -53,6 +56,10 @@
     "linters": {
       "{src,config}/**/*.{js,jsx}": [
         "eslint --fix --cache -c .eslintrc.js",
+        "git add"
+      ],
+      "*.scss": [
+        "stylelint --fix --syntax scss --cache --config .stylelintrc.js",
         "git add"
       ]
     },

@@ -21,6 +21,7 @@ remark42
 node_modules/
 /frontend/public/
 .eslintcache
+.stylelintcache
 
 # temp frontend
 /web/public/

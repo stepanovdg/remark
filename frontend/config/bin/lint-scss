@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+set -o errexit
+
+stylelint 'src/**/*.scss' --syntax scss --cache --config .stylelintrc.js
+
