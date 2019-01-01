@@ -19,6 +19,7 @@
     "@igoradamenko/eslint-config": "^0.1.0",
     "@igoradamenko/stylelint-config": "^0.1.0",
     "autoprefixer": "9.4.3",
+    "axios-mock-adapter": "1.10.0",
     "babel-loader": "8.0.4",
     "babel-plugin-jsx-pragmatic": "1.0.2",
     "babel-plugin-transform-react-remove-prop-types": "0.4.19",
@@ -44,6 +45,7 @@
     "webpack-dev-server": "2.7.1"
   },
   "dependencies": {
+    "axios": "0.18.0",
     "@babel/polyfill": "7.0.0",
     "bem-react-helper": "^1.1.2",
     "redux-zero": "4.12.0",

@@ -2,9 +2,11 @@ import reactHotLoader, { hot } from 'react-hot-loader';
 import preact from 'preact';
 import { Provider } from 'redux-zero/preact';
 
+import store from 'app/app.store';
+
 import Root from 'app/components/root';
 
-import store from 'app/app.store';
+import 'app/app.mocks';
 
 reactHotLoader.preact(preact);
 
