@@ -3,5 +3,6 @@ export default {
   mockDelay: 500,
   mocks: [
     'getConfig',
+    'getUser',
   ],
 };

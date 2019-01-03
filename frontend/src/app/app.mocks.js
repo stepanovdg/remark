@@ -5,11 +5,13 @@ import logger from 'app/helpers/logger';
 import getTimeString from 'app/helpers/get-time-string';
 
 import getConfig from 'mocks/endpoints/getConfig';
-import settings from './app.settings';
+import getUser from 'mocks/endpoints/getUser';
 
+import settings from './app.settings';
 
 const methods = [
   { mock: getConfig, path: '*/config?*' },
+  { mock: getUser, path: '*/user?*' },
 ];
 
 if (settings.isMocksEnabled) {
