@@ -91,6 +91,15 @@ module.exports = {
           'scss-vars-loader',
         ],
       },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg|image)$/,
+        use: {
+          loader: 'file-loader',
+          options: {
+            name: 'files/[name].[hash].[ext]',
+          },
+        },
+      },
     ],
   },
   plugins: [
