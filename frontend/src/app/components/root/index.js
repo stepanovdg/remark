@@ -8,6 +8,7 @@ const mapStateToProps = state => ({
   isLoading: state.loadingCounter > 0,
   currentTheme: state.theme,
   config: state.config,
+  user: state.user,
 });
 
 const mapActionsToProps = {
@@ -21,3 +22,6 @@ export default connect(mapStateToProps, mapActionsToProps)(Root);
 require('./root.scss');
 
 require('./__preloader/root__preloader.scss');
+
+require('./_theme/_dark/root_theme_dark.scss');
+require('./_theme/_light/root_theme_light.scss');
