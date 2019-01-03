@@ -9,6 +9,7 @@ export default {
 
   // loaded data
   config: {},
+  user: {},
 
   // local state
   loadingCounter: 0,
